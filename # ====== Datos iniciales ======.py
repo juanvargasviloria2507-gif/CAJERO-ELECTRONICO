@@ -1,10 +1,10 @@
 # ====== variables iniciales ======
 
 saldo = 1000000
-efectivo_cajero:10000000
-limte_diario:2000000
-PIN_USUARIO:1234
-retirado_hoy:0
+efectivo_cajero = 10000000
+limte_diario = 2000000
+PIN_USUARIO = 1234
+retirado_hoy = 0
 movimientos = []
 
 #====== Funciones ======
@@ -36,6 +36,7 @@ def retirar_dinero(saldo):
         saldo -= cantidad
         print("retiro exitoso")
         print("su nuevo saldo es $: {saldo}")
+        movimientos.append(f"retirar dinero: {cantidad}")
         return saldo
 
 def retiro_rapido(saldo, cantidad, efectivo_cajero, limite_diario, retirado_hoy):
@@ -75,7 +76,7 @@ def retiro_rapido(saldo, cantidad, efectivo_cajero, limite_diario, retirado_hoy)
     
    
 def depositar_saldo(saldo):
-    cantidad= float("ingrese cantidad a depositar:")
+    cantidad= float(input("ingrese cantidad a depositar:"))
     if cantidad <= 0:
         print("cantidad invalida")
     else:
@@ -167,7 +168,7 @@ def mostrar_menu():
     print("4.depositar saldo")
     print("5.transferir")
     print("6.pagar servicio")
-    print("7.otros movimientos")
+    print("7.consultar movimientos")
     print("8.otros movimientos")
     print("9.salir")
     
